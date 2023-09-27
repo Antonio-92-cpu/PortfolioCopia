@@ -50,12 +50,23 @@ function Portfolio() {
       });
   };
 
-
   return (
     <div>
       <h1>Portfolio</h1>
       <form onSubmit={handleSubmit}>
-        {/* Formulario para crear elementos */}
+        <input
+          type="text"
+          placeholder="Nombre"
+          value={formData.name}
+          onChange={(event) => setFormData({ ...formData, name: event.target.value })}
+        />
+        <input
+          type="text"
+          placeholder="Descripción"
+          value={formData.description}
+          onChange={(event) => setFormData({ ...formData, description: event.target.value })}
+        />
+        <button type="submit">Añadir</button>
       </form>
       <ul>
         {items.map((item) => (
